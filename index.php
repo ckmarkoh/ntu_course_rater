@@ -104,7 +104,7 @@ ul.bs_choose li a:hover , ul.bs_choose li a:visited,  ul.bs_choose li a:active  
 <div id="wrapper_outer" class="body_center" style="width:100%;height:100%;min-height:700px;min-width:1000px;">
 
 	<div id="header" class="div1" style="position:absolute;top:0px;left:0px;width:100%;height:12%;">
-		<h1 id="header_title" style="margin-left:15%;"></h1>
+		<h2 id="header_title" style="margin-left:15%;"></h2>
 			<ul id="header_choose" class="bs_choose">
 			<?php
 				foreach($browser as $b ){
@@ -166,7 +166,8 @@ function browser_detect(){
 }
 
 function browser_choose( t){
-	var header_word="NTU Course Rater 安裝與使用教學--";
+	var header_word='<span style="font-size:120%;font-weight:bold;">NTU Course Rater -- 30 秒完成期末教學評鑑</span><br/> <span style="font-size:90%;">安裝與使用教學 -- ';
+	var header_word_end='</span>';
 	if(false){
 
 	}
@@ -174,7 +175,7 @@ function browser_choose( t){
 		foreach($browser as $b ){
 			echo '
 			else if(t=='.$b->id.'){
-				$("#header_title").html(header_word+"'.$b->name.'");
+				$("#header_title").html(header_word+"'.$b->name.'"+header_word_end);
 				bs_current='.$b->id.'
 			}';
 		}
