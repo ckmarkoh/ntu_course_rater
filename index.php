@@ -27,6 +27,7 @@ h1,h2,h3,h4,h5,h6{
 a:hover, a:visited ,a:active {
 	color:#eeaaff
 }
+
 .body_center{
 	margin-bottom: auto;
 	margin-left: auto;
@@ -44,27 +45,32 @@ a:hover, a:visited ,a:active {
 }
 ul.bs_choose{
 	top:0px;
-	right:0px;
+	left:0px;
 	position:absolute;
 }
 ul.bs_choose li{
-	display:inline;
+	/*margin-bottom:3px;*/
+	display:block;
 }
-
+ul.bs_choose li img{
+	max-height:18px;
+	margin:2px;
+}
 ul.bs_choose li a{
+	left:-25px;
 	text-decoration:none;	
 	padding-left:10px;
 	padding-right:10px;
 	background:#aaaaaa;
-	margin-right:5px;
 	border:1px solid black;
 	width:140px;
-	font-size:120%;
 	color:#0055aa;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-
+	padding:2px;	
+	position:relative;
+	line-height:180%;
 }
 ul.bs_choose li a:hover {
 	background:#ffffff;
@@ -97,21 +103,24 @@ ul.bs_choose li a:hover , ul.bs_choose li a:visited,  ul.bs_choose li a:active  
 
 <div id="wrapper_outer" class="body_center" style="width:100%;height:100%;min-height:700px;min-width:1000px;">
 
-	<div id="header" class="div1" style="position:absolute;top:0px;left:0px;width:100%;height:9%;">
-		<h1 id="header_title" style="margin-left:10px"></h1>
+	<div id="header" class="div1" style="position:absolute;top:0px;left:0px;width:100%;height:12%;">
+		<h1 id="header_title" style="margin-left:15%;"></h1>
 			<ul id="header_choose" class="bs_choose">
 			<?php
 				foreach($browser as $b ){
-					echo '<li><a href="?type='.$b->id.'"><img style="max-height:30px;"src="'.$b->img.'"/>'.$b->name.'</a></li>';
+					echo '<li><a href="?type='.$b->id.'"><img src="'.$b->img.'"/>'.'for '.$b->name.'</a></li>';
 				}
 			?>
 			</ul>
+		<div id="header_logo" style="position:absolute;right:10px;top:5px;" >
+			<a href="http://dvlab.ee.ntu.edu.tw/" target="_blank"><img src="./img/DVLab.png" style="max-height:80px;" ></img></a>
+		</div>
 	</div>
-	<div id="step" class="div1" style="position:absolute;top:10%;left:0px;width:14%;height:85%;overflow:auto;">
+	<div id="step" class="div1" style="position:absolute;top:13%;left:0px;width:14%;height:82%;overflow:auto;">
 
 	</div>
 
-	<div id="content" class="div1" style="position:absolute;top:10%;right:0px;width:85%;height:85%;overflow:auto;">
+	<div id="content" class="div1" style="position:absolute;top:13%;right:0px;width:85%;height:82%;overflow:auto;">
 
 	</div>
 	<div style="position:absolute; bottom:0px;width:100% text-align:center">
@@ -119,6 +128,8 @@ ul.bs_choose li a:hover , ul.bs_choose li a:visited,  ul.bs_choose li a:active  
 		<span class="link_pseudo" onClick="show_alert();">
 		版權及隱私權聲明 
 		</span>
+		,	
+		<a href="mailto:semanticwebdvlab@gmail.com" >聯絡我們</a>
 	</div>
 
 </div>
@@ -170,8 +181,8 @@ function browser_choose( t){
 	?>
 	else{
 		bs_current=-1;
-		$("#header_title").html("很抱歉，本外掛程式尚未支援您的瀏覽器種類");
-		$("#header_choose").html('<li><a href="https://support.google.com/chrome/answer/95346?hl=zh-Hant" target="_blank" ><img style="max-height:30px;"src="./img/c_i.png"/>請下載Chrome</a></li><li><a href="http://moztw.org/firefox/" target="_blank" ><img style="max-height:30px;"src="./img/f_i.png"/>請下載Firefox</a></li> ');
+		$("#header_title").html("很抱歉，本程式未支援您的瀏覽器種類");
+		$("#header_choose").html('<li><a href="https://support.google.com/chrome/answer/95346?hl=zh-Hant" target="_blank" ><img src="./img/c_i.png"/>請下載Chrome</a></li><li><a href="http://moztw.org/firefox/" target="_blank" ><img src="./img/f_i.png"/>請下載Firefox</a></li> ');
 		
 	}
 
@@ -202,7 +213,7 @@ function load_content(x){
 	var bsd_step=bs_data[bs_current].step;
 	var bsd_img="";
 	if(bsd_step[x].img!=""){
-		bsd_img='<img style="max-width:100%; border:1px dotted gray;margin:5px;" src="'+bsd_step[x].img+'" />';
+		bsd_img='<img style="max-width:95%;max-height:75%; border:1px dotted gray;margin:5px;" src="'+bsd_step[x].img+'" />';
 	}
 	var bsd_prenex=""
 	if(x>0){
