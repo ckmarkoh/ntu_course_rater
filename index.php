@@ -27,7 +27,10 @@ h1,h2,h3,h4,h5,h6{
 a:hover, a:visited ,a:active {
 	color:#eeaaff
 }
+img.content_img{
+max-width:95%;max-height:75%; border:1px dotted gray;margin:5px; 
 
+}
 .body_center{
 	margin-bottom: auto;
 	margin-left: auto;
@@ -81,7 +84,7 @@ ul.bs_choose li a:hover , ul.bs_choose li a:visited,  ul.bs_choose li a:active  
 .bs_step{
 	color:black;
 	height:auto;
-	width:95%;
+	width:97%;
 	margin:1%;
 	border:1px solid gray; 
 	cursor:pointer;
@@ -166,7 +169,7 @@ function browser_detect(){
 }
 
 function browser_choose( t){
-	var header_word='<span style="font-size:120%;font-weight:bold;">NTU Course Rater -- 30 秒完成期末教學評鑑</span><br/> <span style="font-size:90%;">安裝與使用教學 -- ';
+	var header_word='<span style="font-size:120%;font-weight:bold;">NTU Course Rater -- 30 秒內完成期末教學評鑑</span><br/> <span style="font-size:90%;">安裝與使用教學 -- ';
 	var header_word_end='</span>';
 	if(false){
 
@@ -214,7 +217,7 @@ function load_content(x){
 	var bsd_step=bs_data[bs_current].step;
 	var bsd_img="";
 	if(bsd_step[x].img!=""){
-		bsd_img='<img style="max-width:95%;max-height:75%; border:1px dotted gray;margin:5px;" src="'+bsd_step[x].img+'" />';
+		bsd_img='<img class="content_img" src="'+bsd_step[x].img+'" />';
 	}
 	var bsd_prenex=""
 	if(x>0){

@@ -88,35 +88,44 @@ new BrowserStep('step9 進入填答','
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step10 選取項目','
+new BrowserStep('step10 修正亂碼','
+若您的頁面會出現亂碼,如下圖,則需進行本步驟,若沒出現亂碼則可跳過本步驟<br/>
+<img class="content_img" src="./img/rr1.png"/><br/>
+請選擇右上角的<img style="max-height:18px;"src="./img/cmenu.png" />->"工具"->"編碼"->"Big-5",則可以顯示出正常文字,進行下個步驟<br/>
+',
+'./img/rc1.png'
+)
+);
+$browser[$i]->add_step(
+new BrowserStep('step11 選取項目','
 選取想填的項目,按下下方的確定
 ',
 './img/c10.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step11 看聲明','
+new BrowserStep('step12 看聲明','
 進入意見填寫的頁面以後,首先,會跳出"版權與隱私權聲明",請先閱讀完後,再按右上角的按鈕關閉
 ',
 './img/c11.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step12 開啟面板','
+new BrowserStep('step13 開啟面板','
 本程式會使頁面右上方多出一個"開啟"按鈕,請點選它
 ',
 './img/c12.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step13 自動填答','
+new BrowserStep('step14 自動填答','
 接著會跳出按鈕及選單,按左方的按鈕,可自動幫你填寫教學意見最下方的空白欄位,右方的選單,可幫你快速解決教學意見中的其他選項
 ',
 './img/c13.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step14 填答完成','
+new BrowserStep('step15 填答完成','
 點選送出後就完成啦
 ',
 './img/c14.png'
@@ -168,35 +177,45 @@ new BrowserStep('step7 進入填答','
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step8 選取項目','
+new BrowserStep('step8 修正亂碼','
+若您的頁面會出現亂碼,如下圖,則需進行本步驟,若沒出現亂碼則可跳過本步驟<br/>
+<img class="content_img" src="./img/rr1.png"/><br/>
+請選擇"檢視"->"語言及文字編碼"->"Big-5",則可以顯示出正常文字,進行下個步驟
+',
+'./img/rf1.png'
+)
+);
+
+$browser[$i]->add_step(
+new BrowserStep('step9 選取項目','
 選取想填的項目,按下下方的確定
 ',
 './img/c10.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step9 看聲明','
+new BrowserStep('step10 看聲明','
 進入意見填寫的頁面以後,首先,會跳出"版權與隱私權聲明",請先閱讀完後,再按右上角的按鈕關閉
 ',
 './img/f8.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step10 開啟面板','
+new BrowserStep('step11 開啟面板','
 本程式會使頁面右上方多出一個"開啟"按鈕,請點選它
 ',
 './img/f9.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step11 自動填答','
+new BrowserStep('step12 自動填答','
 接著會跳出按鈕及選單,按左方的按鈕,可自動幫你填寫教學意見最下方的空白欄位,右方的選單,可幫你快速解決教學意見中的其他選項
 ',
 './img/f10.png'
 )
 );
 $browser[$i]->add_step(
-new BrowserStep('step12 填答完成','
+new BrowserStep('step13 填答完成','
 點選送出後就完成啦
 ',
 './img/f11.png'
